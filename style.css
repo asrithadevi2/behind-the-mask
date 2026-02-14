@@ -1,0 +1,311 @@
+/* Apple / iOS Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --bg-color: #FAFAFA;
+    /* Very light gray, almost white */
+    --card-bg: #FFFFFF;
+    --text-primary: #121212;
+    /* Nearly Black */
+    --text-secondary: #666666;
+    --accent-black: #000000;
+    --border-color: #E5E5E5;
+    --hover-bg: #F0F0F0;
+    --bubble-sent: #000000;
+    --bubble-sent-text: #FFFFFF;
+    --bubble-received: #F5F5F5;
+    --bubble-received-text: #000000;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --radius-lg: 16px;
+    --radius-xl: 32px;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    height: 90vh;
+    /* Viewport height minus spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Typography */
+h1 {
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+p.subtitle {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 48px;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Cards & Layout */
+.glass-card {
+    background: var(--card-bg);
+    border-radius: var(--radius-xl);
+    /* No shadow for ultra clean look, or very subtle */
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+}
+
+/* Grid */
+.masks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    width: 100%;
+    margin-bottom: 48px;
+}
+
+.mask-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.mask-card:hover {
+    border-color: var(--accent-black);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.mask-icon {
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mask-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* Custom Input Area */
+.input-group {
+    display: flex;
+    gap: 0;
+    /* Connected input */
+    max-width: 400px;
+    /* Wider */
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    /* For connected border */
+    transition: border-color 0.2s;
+}
+
+.input-group:focus-within {
+    border-color: var(--accent-black);
+}
+
+input[type="text"] {
+    flex: 1;
+    background: #FFFFFF;
+    border: none;
+    padding: 16px 20px;
+    font-size: 16px;
+    color: var(--text-primary);
+    font-family: inherit;
+    outline: none;
+}
+
+button {
+    background: var(--accent-black);
+    color: white;
+    border: none;
+    border-radius: 0;
+    /* Connected */
+    padding: 0 32px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #333333;
+}
+
+/* Chat Interface */
+.chat-window {
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    /* Fixed height for chat */
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+}
+
+.chat-header {
+    padding: 20px 24px;
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.back-btn {
+    background: transparent;
+    color: var(--text-primary);
+    font-weight: 500;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.back-btn:hover {
+    background: var(--hover-bg);
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* More breathing room */
+}
+
+/* Scrollbar styling for a cleaner look */
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.message-bubble {
+    max-width: 65%;
+    padding: 14px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.message-bubble.sent {
+    align-self: flex-end;
+    background-color: var(--bubble-sent);
+    color: var(--bubble-sent-text);
+    border-bottom-right-radius: 4px;
+}
+
+.message-bubble.received {
+    align-self: flex-start;
+    background-color: var(--bubble-received);
+    color: var(--bubble-received-text);
+    border-bottom-left-radius: 4px;
+}
+
+.message-info {
+    font-size: 11px;
+    margin-top: 6px;
+    opacity: 0.5;
+    text-align: right;
+    font-weight: 500;
+}
+
+.message-bubble.received .message-info {
+    text-align: left;
+}
+
+.chat-input-area {
+    padding: 20px;
+    background: #FFFFFF;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    gap: 16px;
+}
+
+.chat-input-area input {
+    background: #FAFAFA;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.chat-input-area input:focus {
+    background: #FFFFFF;
+    border-color: var(--accent-black);
+}
+
+.chat-input-area button {
+    border-radius: 12px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 0.6s ease-out;
+}
