@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanctuary | Unfiltered</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="glass-card chat-window">
+            <div class="chat-header">
+                <div>
+                    <h2 id="mask-title" style="margin:0; font-size: 1.2rem;">Unknown Mask</h2>
+                    <span
+                        style="font-size: 0.8rem; color: var(--text-secondary); display: flex; align-items: center; gap: 6px;">
+                        <span style="width: 8px; height: 8px; background: #4ade80; border-radius: 50%;"></span> Online
+                    </span>
+                </div>
+                <button class="back-btn" onclick="window.location.href='index.html'">Swtich Mask</button>
+            </div>
+
+            <div id="chat-messages" class="chat-messages">
+                <!-- Messages will appear here dynamically -->
+                <div class="message-bubble received">
+                    Welcome to the sanctuary. You are safe here.
+                    <div class="message-info">System • Now</div>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" id="message-input" placeholder="Type your unfiltered thoughts..." autocomplete="off">
+                <button class="send-btn" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
