@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behind The Mask | Unfiltered</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="glass-card" style="padding: 3rem; width: 100%; max-width: 800px; text-align: center;">
+            <h1>Behind The Mask</h1>
+            <p class="subtitle">In a world where everyone is watching, who are you when no one is looking? Select a
+                persona to enter the sanctuary.</p>
+
+            <div class="masks-grid">
+                <div class="mask-card" onclick="selectMask('Overwhelmed Achiever')">
+                    <div class="mask-icon">
+                        <!-- Briefcase / Achievement Icon -->
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                    </div>
+                    <div class="mask-title">Overwhelmed Achiever</div>
+                </div>
+                <div class="mask-card" onclick="selectMask('Silent Overthinker')">
+                    <div class="mask-icon">
+                        <!-- Brain / Thought Icon -->
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z">
+                            </path>
+                            <path
+                                d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="mask-title">Silent Overthinker</div>
+                </div>
+                <div class="mask-card" onclick="selectMask('Homesick Soul')">
+                    <div class="mask-icon">
+                        <!-- Home Icon -->
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <div class="mask-title">Homesick Soul</div>
+                </div>
+                <div class="mask-card" onclick="selectMask('Lonely in a Crowd')">
+                    <div class="mask-icon">
+                        <!-- Users / Crowd Icon -->
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="mask-title">Lonely in a Crowd</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; position: relative;">
+                <p style="margin-bottom: 1rem; opacity: 0.7;">Or wear your own mask:</p>
+                <div class="input-group" style="max-width: 400px; margin: 0 auto; display: flex; gap: 10px;">
+                    <input type="text" id="custom-mask-input" placeholder="Enter a unique alias..."
+                        style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 12px 20px; border-radius: 12px; color: white; width: 100%;">
+                    <button onclick="enterCustomMask()"
+                        style="background: var(--primary-accent); border: none; padding: 0 25px; border-radius: 12px; color: white; font-weight: 600; cursor: pointer; white-space: nowrap;">Enter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
